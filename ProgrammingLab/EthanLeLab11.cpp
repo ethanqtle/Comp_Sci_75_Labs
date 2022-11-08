@@ -8,6 +8,7 @@ int main()
     string myString;
     cout << "Please enter a string: " << endl;
     cin >> myString;
+    cout << "In reverse:" << endl;
     printReverse((char *) myString.c_str());
     return 0;
 }
