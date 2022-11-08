@@ -18,11 +18,13 @@ int main(void)
     int *scoreA = new int[numScore];
     readArray(scoreA, numScore);
     bubbleSortA(scoreA, numScore);
-    cout << "\n" << "Sorted list of arrays:" << endl;
+    cout << "\n"
+         << "Sorted list of arrays:" << endl;
     printScore(scoreA, numScore);
 
     double calcAvgScore = avgScore(scoreA, numScore);
-    cout << "\n" << "The average score is: " << calcAvgScore << endl;
+    cout << "\n"
+         << "The average score is: " << calcAvgScore << endl;
     delete[] scoreA;
     return 0;
 }
@@ -56,7 +58,7 @@ void bubbleSortA(int *intArray, int size)
 
 void printScore(int *scoreA, int size)
 {
-    for(int i=0; i<size; i++)
+    for (int i = 0; i < size; i++)
     {
         cout << *(scoreA + i) << endl;
     }
@@ -64,9 +66,9 @@ void printScore(int *scoreA, int size)
 double avgScore(int *scoreA, int size)
 {
     double totalScore = 0.0;
-    for(int i=0; i<size; i++)
+    for (int i = 0; i < size; i++)
     {
         totalScore += *(scoreA + i);
     }
-    return totalScore/size;
+    return totalScore / size;
 }
