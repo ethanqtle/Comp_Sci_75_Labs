@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cstring>
-#include <string>
 
 using namespace std;
 void printReverse(char *strIn);
