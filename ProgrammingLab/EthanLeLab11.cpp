@@ -21,6 +21,7 @@ void printReverse(char *strIn)
 
     // Set ptr to the end of strIn
     char *ptr = strIn + strLength - 1;
+
     for (int i = 0; i < strLength; i++)
         cout << *(ptr--);
     cout << endl;
