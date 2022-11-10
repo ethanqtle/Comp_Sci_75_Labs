@@ -9,7 +9,9 @@ int main()
     cout << "Please enter a string: " << endl;
     cin >> myString;
     cout << "In reverse:" << endl;
-    printReverse((char *) myString.c_str());
+    
+    // Search online and found the use of const_cast
+    printReverse(const_cast<char *> (myString.c_str()));
     return 0;
 }
 
