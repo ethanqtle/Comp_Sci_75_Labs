@@ -5,13 +5,13 @@ using namespace std;
 void printReverse(char *strIn);
 int main()
 {
-    string myString;
+    const int MAX_STRING = 100;
+    char myString[MAX_STRING];
     cout << "Please enter a string: " << endl;
-    cin >> myString;
+    cin.getline(myString, MAX_STRING);
     cout << "In reverse:" << endl;
 
-    // Search online and found the use of const_cast
-    printReverse(const_cast<char *>(myString.c_str()));
+    printReverse(myString);
     return 0;
 }
 
