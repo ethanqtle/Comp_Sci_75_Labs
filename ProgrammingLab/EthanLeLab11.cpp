@@ -15,13 +15,13 @@ int main()
     return 0;
 }
 
+// Prints the user's input in reverse  
 void printReverse(char *strIn)
 {
     int strLength = strlen(strIn);
 
     // Set ptr to the end of strIn
     char *ptr = strIn + strLength - 1;
-
     for (int i = 0; i < strLength; i++)
         cout << *(ptr--);
     cout << endl;
