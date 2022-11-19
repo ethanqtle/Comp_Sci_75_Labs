@@ -10,14 +10,14 @@ struct MovieData
     int runningTime;
 };
 
-void displayMovieInfo(const MovieData&);
+void displayMovieInfo(const MovieData &);
 
 int main()
 {
     MovieData topGun, blackPanther;
 
     topGun = {
-        "Top Maverick",
+        "Top Gun: Maverick",
         "Joseph Kosinki",
         2022,
 
@@ -36,10 +36,14 @@ int main()
     return 0;
 }
 
-void displayMovieInfo(const MovieData& movie)
+void displayMovieInfo(const MovieData &movie)
 {
-    cout << "Title: " << movie.title << endl;
-    cout << "Director: " << movie.director << endl;
-    cout << "Year Released: " << movie.yearRelease << endl;
-    cout << "Running Time (in minutes): " << movie.runningTime << endl;
+    cout << endl
+         << "===================================" 
+         << endl;
+    cout << "Title " << movie.title << endl;
+    cout << "Director " << movie.director << endl;
+    cout << "Year Released " << movie.yearRelease << endl;
+    cout << "Running Time (in minutes) " << movie.runningTime << endl;
+    cout << "===================================" << endl;
 }
