@@ -58,7 +58,7 @@ void selectionSortA(int *intArray, int size)
                 minIndex = scanIndex;
             }
         }
-        // only swap if index is not already in place
+        // only swap if minValue is something else
         if(minIndex != startIndex)
             swap(intArray + startIndex, intArray + minIndex);
     }
