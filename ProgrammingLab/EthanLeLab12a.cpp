@@ -44,15 +44,23 @@ void swap(int *x, int *y)
 
 void selectionSortA(int *intArray, int size)
 {
-    for (int i = 0; i < size; i++)
+    // recode selection sort using pointer notation
+    for (int startIndex = 0; startIndex < size; startIndex++)
     {
-        for (int j = 1; j < size; j++)
+        int minIndex = startIndex;
+        int minVal = *(intArray + minIndex);
+        for (int scanIndex = minIndex+1; scanIndex < size; scanIndex++)
         {
-            if (*(intArray + j - 1) > *(intArray + j))
+            int *ptr = intArray + scanIndex;
+            if (minVal > *ptr)
             {
-                swap(intArray + j - 1, intArray + j);
+                minVal = *ptr;
+                minIndex = scanIndex;
             }
         }
+        // only swap if index is not already in place
+        if(minIndex != startIndex)
+            swap(intArray + startIndex, intArray + minIndex);
     }
 }
 
