@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-void selectionSortA(int *intArray, int size);
+void bubbleSortA(int *intArray, int size);
 void readArray(int *intArray, int size);
 void printScore(int *scoreA, int size);
 double avgScore(int *scoreA, int size);
@@ -17,7 +17,7 @@ int main(void)
 
     int *scoreA = new int[numScore];
     readArray(scoreA, numScore);
-    selectionSortA(scoreA, numScore);
+    bubbleSortA(scoreA, numScore);
     cout << "\n"
          << "Sorted list of arrays:" << endl;
     printScore(scoreA, numScore);
@@ -42,7 +42,7 @@ void swap(int *x, int *y)
     *y = temp;
 }
 
-void selectionSortA(int *intArray, int size)
+void bubbleSortA(int *intArray, int size)
 {
     for (int i = 0; i < size; i++)
     {
