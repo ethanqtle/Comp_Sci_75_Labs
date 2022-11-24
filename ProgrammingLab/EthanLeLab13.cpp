@@ -16,16 +16,16 @@ int main()
     {
         string line;
         int lineCount = 0;
-        while (getline(nameFile, line) && lineCount < 10)
+        while ((lineCount < 10 ) && getline(nameFile, line))
         {
             cout << line << endl;
             lineCount++;
         }
-        nameFile.close();
-        if (lineCount < 10)
+        if (!getline(nameFile, line))
         {
             cout << "The entire file " << fileName << " has been displayed." << endl;
         }
+        nameFile.close();
     }
     else
     {
