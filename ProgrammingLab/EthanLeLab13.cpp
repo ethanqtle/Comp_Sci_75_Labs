@@ -21,7 +21,7 @@ int main()
             cout << line << endl;
             lineCount++;
         }
-        if (!getline(nameFile, line))
+        if (lineCount < 10)
         {
             cout << "The entire file " << fileName << " has been displayed." << endl;
         }
