@@ -10,18 +10,46 @@ private:
     int day;
     int year;
 
-    const string monthName[13] = {
-        "NotAMonth" // Index 0 is not a month
-        ,
-        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
-
+    // getMonthName return a string for the month's name
     const string getMonthName()
     {
-        return monthName[this->month];
+        // Use object's month variable => no need to pass in
+        switch (month)
+        {
+        case 1:
+            return "January";
+        case 2:
+            return "February";
+        case 3:
+            return "March";
+
+        case 4:
+            return "April";
+        case 5:
+            return "May";
+        case 6:
+            return "June";
+
+        case 7:
+            return "July";
+        case 8:
+            return "August";
+        case 9:
+            return "September";
+
+        case 10:
+            return "October";
+        case 11:
+            return "November";
+        case 12:
+            return "December";
+        default:
+            return "Unknown";
+        }
     };
 
 public:
-    Date(int month, int day, int year)
+    Date(int month=1, int day=1, int year=2000)
     {
         this->month = month;
         this->day = day;
@@ -90,13 +118,40 @@ public:
             << endl;
         ;
     }
+
 };
+
 
 int main()
 {
-    Date myDate(12, 25, 2010);
+    Date myDate;
+    int month, day, year;
+    cout << "Please enter a date to print " << endl;
+
+    month = -1;
+    while(!myDate.setMonth(month)){
+        cout << "Please enter the month (1-12): " << endl;
+        cin >> month;
+    }
+
+    day = -1;
+    while(!myDate.setDay(day)){
+        cout << "Please enter the day (1-31): " << endl;
+        cin >> day;
+    }
+
+    cout << "Please enter the year" << endl;
+    cin >> year;
+    myDate.setYear(year);
+
+    cout << endl << "Date in format1" << endl;
     myDate.printDate1();
+
+    cout << endl << "Date in format2" << endl;
     myDate.printDate2();
+
+    cout << endl << "Date in format3" << endl;
     myDate.printDate3();
+
     return 0;
 }
