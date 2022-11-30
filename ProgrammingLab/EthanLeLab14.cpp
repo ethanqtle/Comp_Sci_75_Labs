@@ -87,14 +87,21 @@ public:
         this->year = year;
     }
 
+    inline int getMonth(){ return month;}
+
+    inline int getDay(){ return day;}
+
+    inline int getYear(){ return year;}
+
+
     void printDate1()
     {
         cout << setw(2) << setfill('0')
-             << this->month << "/"
+             << getMonth() << "/"
              << setw(2) << setfill('0')
-             << this->day << "/"
+             << getDay() << "/"
              << setw(2) << setfill('0')
-             << (this->year % 100)
+             << (getYear() % 100)
              << endl;
     }
 
@@ -102,8 +109,8 @@ public:
     {
         cout << getMonthName() << " "
              << setw(2) << setfill('0')
-             << this->day << ", "
-             << this->year
+             << getDay() << ", "
+             << getYear()
              << endl;
         ;
     }
@@ -112,9 +119,9 @@ public:
     {
         cout
             << setw(2) << setfill('0')
-            << this->day << " "
+            << getDay() << " "
             << getMonthName() << " "
-            << this->year
+            << getYear()
             << endl;
         ;
     }
