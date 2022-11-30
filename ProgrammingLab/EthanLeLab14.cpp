@@ -56,6 +56,7 @@ public:
         this->year = year;
     }
 
+    // return true if we can set month
     bool setMonth(int month)
     {
         if (month < 1 || month > 12)
@@ -69,6 +70,7 @@ public:
         }
     }
 
+    // return true if we can set day
     bool setDay(int day)
     {
         if (day < 1 || day > 31)
@@ -82,6 +84,7 @@ public:
         }
     }
 
+    // return true always, there's no validation on year
     void setYear(int year)
     {
         this->year = year;
