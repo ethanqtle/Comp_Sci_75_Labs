@@ -2,7 +2,7 @@
 #include <string>
 #include <iomanip>
 #include <cstdlib>
-#include <random>
+#include <cmath>
 
 using namespace std;
 
@@ -26,7 +26,8 @@ private:
     int genNewSecretNum()
     {
         // generate 32 bits random number
-        // rand() return only 16 bits random
+        // rand() return only 16 bits value
+        // since RAND_MAX == 0xFFFF
         unsigned int rand32bit;
         rand32bit = (rand() << 16) | (rand() & 0xFFFF);
         return (rand32bit % maxNum) + 1;
@@ -36,6 +37,11 @@ public:
     GuessNumGame()
     {
         newGame(0);
+    }
+
+    void initGame()
+    {
+        srand(time(NULL));
     }
 
     bool newGame(int newLevel)
@@ -128,8 +134,10 @@ int main()
 {
     GuessNumGame myGame;
     int gameLevel;
-    srand(time(NULL));
-    // cout << "rand_max == " << RAND_MAX << "\n";
+
+    // setup random generator to generate different number everytime
+    myGame.initGame();
+
     do
     {
         cout << "Please pick a level (0-" << myGame.getMaxLevel() << ")\n";
