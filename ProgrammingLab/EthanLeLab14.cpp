@@ -49,7 +49,7 @@ private:
     };
 
 public:
-    Date(int month=1, int day=1, int year=2000)
+    Date(int month=2, int day=17, int year=2006)
     {
         this->month = month;
         this->day = day;
