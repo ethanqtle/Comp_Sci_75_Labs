@@ -44,6 +44,7 @@ public:
     }
 };
 
+// Declared outside of class in a .cpp file
 double DivSales::totalCorporateSales = 0.0;
 
 int main() {
