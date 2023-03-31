@@ -22,19 +22,3 @@ int sum(int arr[], int size)
 	else
 		return arr[size - 1] + sum(arr, size - 1);
 }
-
-// Output:
-
-// The sum of the array is 55
-
-// C++ Programming Lab
-
-// CS076 Programming Lab
-
-// Ethan Le
-
-// Lab 9
-
-// Programming Lab
-
-// Post navigation ← Lab 8: C++ Programming Lab
