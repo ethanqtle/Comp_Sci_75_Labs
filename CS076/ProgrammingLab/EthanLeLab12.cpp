@@ -39,21 +39,9 @@ void fillArray(int array[], int arraySize)
 }
 
 // write function to count the number of elements in array of size arraySize with a value
-// of value
-int count(int array[], int arraySize, int value)
-{
-    // Order analysis: O(n) for count function 
-    // since it has to go through the entire array
-    int count = 0;
-     for (int i = 0; i < arraySize; i++)
-    {
-        if (array[i] == value)
-        {
-            count++;
-        }
-    }
-    return count;
-}
+// of value prototype:
+int count(int array[], int arraySize, int value);
+
 
 // write function to sort array of size arraySize with values in {-2, 0, 2}
 void sort(int array[], int arraySize)
@@ -80,6 +68,21 @@ void sort(int array[], int arraySize)
     {
         array[i] = 2;
     }
+}
+
+int count(int array[], int arraySize, int value)
+{
+    // Order analysis: O(n) for count function 
+    // since it has to go through the entire array
+    int count = 0;
+     for (int i = 0; i < arraySize; i++)
+    {
+        if (array[i] == value)
+        {
+            count++;
+        }
+    }
+    return count;
 }
 
 // write main function to test
