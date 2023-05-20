@@ -276,3 +276,25 @@ cython_debug/
 # -------- CUSTOM --------
 .vscode/
 submit/
+
+# Java ignore
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# IntelliJ IDEA
+.idea/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Maven
+target/
+
+# Gradle
+build/
+.gradle/
