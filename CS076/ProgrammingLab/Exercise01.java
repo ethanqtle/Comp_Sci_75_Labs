@@ -4,8 +4,8 @@ public class Exercise01 {
     // tree that can hold values of any class type.
     // Test your program class with a driver program.
 
-    // write a private static class template TreeNode for comparable parameter type
-    // T
+    // write a private static class template TreeNode for comparable parameter
+    // type T
     private static class TreeNode<T extends Comparable<T>> {
 
         private T value;
@@ -201,7 +201,7 @@ public class Exercise01 {
         System.out.println("In order: ");
         binaryTree.displayInOrder();
         System.out.println();
-        
+
 
         // test delete method
         System.out.println("Deleting 8 from the tree");
@@ -214,7 +214,6 @@ public class Exercise01 {
         System.out.println(binaryTree.searchNode(12));
         System.out.println("Searching 8 in the tree");
         System.out.println(binaryTree.searchNode(8));
-
  
     }
 
