@@ -1,12 +1,8 @@
-// Please do the following:
-
-// Write a program that randomly fills an array of integers and then sorts it.
+// Program description:
+//  Write a program that randomly fills an array of integers and then sorts it.
 //  The array size is entered by the user and the values are chosen at
 //  random in {-2, 0, 2}. Analyze the time complexity of your program.
-// Save the source code in file  Exercise01.cpp.  
 
-// write a sort function of arrays of integers values randomly selected in {-2, 0, 2}
-// using radix sort
 
 #include <iostream>
 #include <iomanip>
@@ -28,7 +24,7 @@ void printArray(int array[], int arraySize)
 void fillArray(int array[], int arraySize)
 {
     // declare a fixed array of size 3 with values -2, 0, 2
-    int values[3] = { -2, 0, 2 };
+    static int values[3] = { -2, 0, 2 };
     for (int i = 0; i < arraySize; i++)
     {
         // generate a random index in [0, 2]
@@ -38,23 +34,23 @@ void fillArray(int array[], int arraySize)
     }
 }
 
-// write function to count the number of elements in array of size arraySize with a value
+// write function to countVal the number of elements in array of size arraySize with a value
 // of value prototype:
-int count(int array[], int arraySize, int value);
+int countVal(int array[], int arraySize, int value);
 
 
-// write function to sort array of size arraySize with values in {-2, 0, 2}
-void sort(int array[], int arraySize)
+// write function to countSort array of size arraySize with values in {-2, 0, 2}
+void countSort(int array[], int arraySize)
 {
-    // Order analysis: O(n) for sort function
+    // Order analysis: O(n) for countSort function
     // since it has to go through the entire array with
-    // 3 calls to count function
+    // 3 calls to countVal function
     // and 3 for loops to assign values to array elements
     // which are all O(n)
-    int countNeg2 = count(array, arraySize, -2);
-    int count0 = count(array, arraySize, 0);
-    // Don't need to count 2 because it's the only value left
-    // int count2 = count(array, arraySize, 2);
+    int countNeg2 = countVal(array, arraySize, -2);
+    int count0 = countVal(array, arraySize, 0);
+    // Don't need to countVal 2 because it's the only value left
+    // int count2 = countVal(array, arraySize, 2);
 
     for (int i = 0; i < countNeg2; i++)
     {
@@ -70,19 +66,19 @@ void sort(int array[], int arraySize)
     }
 }
 
-int count(int array[], int arraySize, int value)
+int countVal(int array[], int arraySize, int value)
 {
-    // Order analysis: O(n) for count function 
+    // Order analysis: O(n) for countVal function 
     // since it has to go through the entire array
-    int count = 0;
+    int countResult = 0;
      for (int i = 0; i < arraySize; i++)
     {
         if (array[i] == value)
         {
-            count++;
+            countResult++;
         }
     }
-    return count;
+    return countResult;
 }
 
 // write main function to test
@@ -101,7 +97,7 @@ int main()
     cout << "Array before sorting: ";
     printArray(array, arraySize);
 
-    sort(array, arraySize);
+    countSort(array, arraySize);
     cout << "Array after sorting: ";
     printArray(array, arraySize);
 
